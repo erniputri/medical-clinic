@@ -1,0 +1,1300 @@
+/*1. RESET DAN PENGATURAN DASAR */
+
+:root {
+  --blue: #08a8e8;
+  --blue-dark: #0068b4;
+  --blue-light: #b9eafa;
+  --pale: #eefaff;
+  --green: #48b457;
+  --green-light: #d9f2df;
+  --ink: #262a2d;
+  --muted: #777f84;
+  --white: #ffffff;
+  --shadow: 0 8px 24px rgba(38, 55, 65, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--white);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: clamp(24px, 2.5vw, 32px);
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+.container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 2. HEADER DAN NAVIGASI*/
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 88px;
+  padding-block: 16px;
+  background: var(--white);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.brand span {
+  font-size: 30px;
+  font-weight: 600;
+  color: #252525;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border: 6px solid #c5edf3;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.brand-play {
+  display: block;
+  margin-left: 3px;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(18px, 3vw, 42px);
+}
+
+.main-nav a {
+  position: relative;
+  display: inline-block;
+  padding-block: 8px;
+  color: #343b3f;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--blue-dark);
+}
+
+.main-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  margin-inline: auto;
+  border-radius: 5px;
+  background: var(--blue-dark);
+  content: "";
+}
+
+.main-nav .settings-link {
+  font-size: 23px;
+}
+
+/*3. HERO / BAGIAN HEADER UTAMA*/
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: 40px;
+  min-height: 610px;
+  padding-top: 35px;
+  padding-bottom: 80px;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  padding-block: 20px;
+}
+
+.hero-content h1 {
+  max-width: 540px;
+  margin-bottom: 24px;
+  color: #25292c;
+  font-size: clamp(42px, 4.8vw, 68px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+
+.hero-content p {
+  max-width: 430px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: clamp(17px, 1.8vw, 23px);
+  line-height: 1.8;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/*HERO BACKGROUND - DEKORASI DI BELAKANG FOTO */
+/* Lapisan biru muda yang melengkung dari atas */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -290px;
+  right: -3%;
+  width: 78%;
+  height: 930px;
+  background: #b8e8f8;
+  border-radius: 0 0 50% 50%;
+  clip-path: ellipse(72% 68% at 63% 20%);
+  pointer-events: none;
+}
+
+/* Lapisan gradasi biru kehijauan di sisi kanan */
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -220px;
+  right: -8%;
+  width: 69%;
+  height: 1030px;
+  background: linear-gradient(145deg, #b9e7df 0%, #8bdce5 45%, #39bde9 100%);
+  clip-path: ellipse(75% 65% at 80% 30%);
+  pointer-events: none;
+}
+
+/* Foto tetap berada di atas dekorasi */
+.hero-image {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .hero::before {
+    top: -200px;
+    right: -10%;
+    width: 85%;
+    height: 780px;
+  }
+
+  .hero::after {
+    top: -160px;
+    right: -15%;
+    width: 78%;
+    height: 850px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero::before {
+    top: -50px;
+    right: -35%;
+    width: 120%;
+    height: 470px;
+  }
+
+  .hero::after {
+    top: -20px;
+    right: -45%;
+    width: 120%;
+    height: 500px;
+  }
+}
+
+/* Foto dokter */
+.hero-image .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0 42% 42% 0;
+}
+
+/* Tombol play */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue);
+  font-size: 27px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+/* Form pencarian dokter */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 560px);
+  min-height: 76px;
+  padding: 10px 12px 10px 32px;
+  border-radius: 50px;
+  background: var(--white);
+  box-shadow: 0 8px 28px rgba(38, 55, 65, 0.1);
+}
+
+.search-form input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 10px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.search-form input::placeholder {
+  color: #999;
+}
+.search-form button {
+  flex: 0 0 180px;
+  min-height: 54px;
+  border: 0;
+  border-radius: 50px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-form button:hover,
+.button:hover {
+  background: #329b43;
+}
+
+/* 4. ABOUT US*/
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 110px);
+  min-height: 430px;
+  padding-top: 55px;
+  padding-bottom: 75px;
+}
+
+.about-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Lingkaran besar di belakang foto About Us */
+.about-visual::before {
+  position: absolute;
+  z-index: -1;
+  width: 310px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--pale);
+  content: "";
+}
+
+/* Titik-titik dekorasi */
+.about-visual::after {
+  position: absolute;
+  z-index: -2;
+  right: -55px;
+  bottom: -35px;
+  width: 190px;
+  height: 120px;
+  background-image: radial-gradient(#bde7f7 1.8px, transparent 1.8px);
+  background-size: 14px 14px;
+  content: "";
+}
+
+.about-circle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 250px;
+  aspect-ratio: 1;
+  border: 1px solid #8edaff;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.about-circle img {
+  width: 82%;
+  height: 82%;
+  object-fit: cover;
+  border: 1px solid #8edaff;
+  border-radius: 50%;
+}
+
+.about-circle h2 {
+  position: absolute;
+  margin: 0;
+  color: var(--white);
+  font-size: 27px;
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.about-content {
+  min-width: 0;
+}
+
+.about-content h2 {
+  max-width: 560px;
+  margin-bottom: 24px;
+  font-size: clamp(23px, 2.2vw, 32px);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px 28px;
+  margin-bottom: 25px;
+}
+
+.stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.stats strong {
+  font-size: clamp(25px, 2.5vw, 34px);
+  line-height: 1.2;
+}
+
+.stats span {
+  padding: 2px 13px;
+  border-radius: 30px;
+  background: var(--green-light);
+  color: #26833a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.about-content > p {
+  padding-left: 15px;
+  border-left: 2px solid #d8e3e7;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 5. TOMBOL UMUM DAN KARTU*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 50px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.card {
+  min-width: 0;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.card > img {
+  width: 100%;
+  height: 170px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* 6. CLINIC FACILITY */
+.facility-section {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(210px, 1fr);
+  align-items: stretch;
+  gap: 20px;
+  padding-top: 25px;
+  padding-bottom: 75px;
+}
+
+.facility-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  min-width: 0;
+}
+
+.facility-cards .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-cards .card > img {
+  height: 165px;
+}
+
+.facility-cards .card p {
+  flex: 1;
+}
+
+.facility-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 330px;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 48% 0 0 48%;
+  background: linear-gradient(135deg, #c4f1f2, #9ce3f2);
+}
+
+.facility-panel::before {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(8, 168, 232, 0.35);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.facility-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+  border: 1px solid var(--blue);
+  color: var(--blue-dark);
+  font-size: 30px;
+}
+
+.facility-panel h2 {
+  position: relative;
+  z-index: 1;
+  color: var(--blue-dark);
+  font-size: clamp(23px, 2vw, 30px);
+}
+
+.facility-arrows {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.facility-arrows button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue-dark);
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+/* OUR SPECIALITY*/
+.specialty-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(35px, 7vw, 90px);
+  padding-top: 45px;
+  padding-bottom: 80px;
+}
+
+.specialty-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 370px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.specialty-orbit {
+  position: absolute;
+  border: 1px solid #9bdcff;
+  border-radius: 50%;
+}
+
+.orbit-one {
+  inset: 8%;
+}
+
+.orbit-two {
+  inset: 22%;
+}
+
+.specialty-center {
+  display: grid;
+  place-items: center;
+  width: 43%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.specialty-icon {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  font-size: 19px;
+  box-shadow: var(--shadow);
+}
+
+.icon-top {
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-left {
+  top: 24%;
+  left: 0;
+  background: var(--blue);
+}
+
+.icon-right {
+  top: 36%;
+  right: 0;
+  background: #ff398c;
+}
+
+.icon-bottom {
+  right: 18%;
+  bottom: 0;
+  background: #ff398c;
+}
+
+.icon-lower-left {
+  bottom: 16%;
+  left: 10%;
+}
+
+.icon-lower-right {
+  right: 5%;
+  bottom: 22%;
+  background: var(--blue);
+}
+
+.specialty-content {
+  min-width: 0;
+}
+
+.specialty-content h2 {
+  margin-bottom: 18px;
+}
+
+.specialty-content > p {
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.tags a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 17px;
+  border: 1px solid #cfdee4;
+  border-radius: 30px;
+  background: var(--white);
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tags a:hover,
+.tags a.selected {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
+}
+
+.tags a.selected {
+  font-weight: 700;
+}
+
+/* 8. DAFTAR DOKTER*/
+main
+  > section.container:not(.clinics):not(.specialty-section):not(.about):not(
+    .facility-section
+  ) {
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+main > section.container > h2 {
+  margin-bottom: 24px;
+}
+
+\#doctors > .tags {
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.doctor-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.doctor-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doctor-card > img {
+  width: 85px;
+  height: 85px;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.doctor-card h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.doctor-card p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+/* 9. TESTIMONIALS*/
+.stars {
+  color: #ffb600;
+  letter-spacing: 3px;
+}
+
+main > section.container > .grid:not(.doctor-grid) .card {
+  padding: 25px;
+}
+
+main > section.container > .grid:not(.doctor-grid) .card p {
+  line-height: 1.8;
+}
+
+/* 10. CALL TO ACTION*/
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 35px 40px;
+  border: 1px solid #a5dff6;
+  border-radius: 16px;
+  background: #f5fcff;
+}
+
+.cta h2 {
+  margin-bottom: 8px;
+}
+
+.cta p {
+  margin-bottom: 0;
+}
+
+.cta .button {
+  flex-shrink: 0;
+  background: var(--blue);
+}
+
+.cta .button:hover {
+  background: var(--blue-dark);
+}
+
+/*11. OUR CLINICS*/
+.clinics {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 50px;
+  padding-top: 65px;
+  padding-bottom: 75px;
+}
+
+.clinics article {
+  margin-bottom: 25px;
+}
+
+.clinics article:last-child {
+  margin-bottom: 0;
+}
+
+.clinics article h3 {
+  margin-bottom: 8px;
+}
+
+.clinics article p {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.clinics > img {
+  width: 100%;
+  height: 350px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* 12. FOOTER*/
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-top: 55px;
+  padding-bottom: 35px;
+  border-top: 1px solid #e5edf0;
+}
+
+.site-footer .brand {
+  margin-bottom: 18px;
+  font-size: 21px;
+}
+
+.site-footer .brand-mark {
+  width: 42px;
+  height: 42px;
+  border-width: 4px;
+}
+
+.site-footer h3 {
+  margin-bottom: 18px;
+  color: var(--blue-dark);
+  font-size: 15px;
+}
+
+.site-footer a:not(.brand) {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-footer a:not(.brand):hover {
+  color: var(--blue-dark);
+}
+
+.site-footer p {
+  max-width: 330px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.site-footer small {
+  font-size: 12px;
+}
+
+/*13. RESPONSIVE TABLET*/
+
+@media (max-width: 1000px) {
+  .container {
+    width: calc(100% - 44px);
+  }
+
+  .site-header {
+    gap: 20px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 25px;
+    min-height: 530px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 4.6vw, 48px);
+  }
+
+  .hero-image {
+    height: 380px;
+  }
+
+  .search-form {
+    min-height: 64px;
+    padding-left: 22px;
+  }
+
+  .search-form button {
+    flex-basis: 130px;
+
+    min-height: 46px;
+  }
+
+  .about {
+    gap: 45px;
+  }
+
+  .about-visual::before {
+    width: 260px;
+  }
+
+  .about-circle {
+    width: 220px;
+  }
+
+  .facility-section {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-panel {
+    min-height: 230px;
+
+    border-radius: 25px;
+  }
+
+  .facility-panel::before {
+    border-radius: 25px;
+  }
+
+  .doctor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .specialty-section {
+    gap: 35px;
+  }
+
+  .site-footer {
+    gap: 25px;
+  }
+}
+
+/* 14. RESPONSIVE HP*/
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    min-height: auto;
+    padding-block: 18px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-play {
+    font-size: 23px;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    width: 100%;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+  }
+
+  .main-nav .settings-link {
+    font-size: 19px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: auto;
+    padding-top: 35px;
+    padding-bottom: 70px;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding-top: 10px;
+  }
+
+  .hero-content h1 {
+    max-width: 500px;
+    margin-bottom: 18px;
+    font-size: clamp(37px, 9vw, 54px);
+    letter-spacing: -1px;
+  }
+
+  .hero-content p {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .hero-image {
+    width: 90%;
+    height: clamp(260px, 70vw, 390px);
+    margin-left: auto;
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+    font-size: 23px;
+  }
+
+  .search-form {
+    gap: 8px;
+    min-height: 60px;
+    padding: 7px 8px 7px 18px;
+  }
+
+  .search-form input {
+    font-size: 14px;
+  }
+
+  .search-form button {
+    flex-basis: 105px;
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    min-height: auto;
+    padding-top: 35px;
+    padding-bottom: 55px;
+  }
+
+  .about-visual {
+    min-height: 260px;
+  }
+
+  .about-visual::before {
+    width: 250px;
+  }
+
+  .about-visual::after {
+    right: 0;
+  }
+
+  .about-circle {
+    width: 220px;
+  }
+
+  .about-content h2 {
+    font-size: 25px;
+  }
+
+  .stats {
+    gap: 18px;
+  }
+
+  .facility-section {
+    padding-bottom: 45px;
+  }
+
+  .facility-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-cards .card > img {
+    height: 210px;
+  }
+
+  .facility-panel {
+    min-height: 220px;
+    padding: 25px;
+  }
+
+  .specialty-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 35px;
+    padding-bottom: 55px;
+  }
+
+  .specialty-visual {
+    width: min(100%, 330px);
+  }
+
+  .specialty-content h2 {
+    font-size: 25px;
+  }
+
+  .tags {
+    gap: 8px;
+  }
+
+  .tags a {
+    min-height: 34px;
+    padding: 6px 13px;
+    font-size: 12px;
+  }
+
+  .doctor-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card {
+    gap: 15px;
+  }
+
+  .doctor-card > img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .clinics {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .clinics > img {
+    height: 260px;
+  }
+
+  .site-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 22px;
+    padding-top: 40px;
+  }
+}
+
+/*15. RESPONSIVE HP KECIL*/
+@media (max-width: 400px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .main-nav {
+    gap: 8px 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .search-form {
+    padding-left: 13px;
+  }
+
+  .search-form button {
+    flex-basis: 85px;
+  }
+
+  .about-circle {
+    width: 195px;
+  }
+
+  .about-visual::before {
+    width: 225px;
+  }
+
+  .stats {
+    gap: 14px;
+  }
+
+  .stats strong {
+    font-size: 25px;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+}

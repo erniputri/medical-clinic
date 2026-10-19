@@ -1,0 +1,299 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #08a8e8;
+  --blue-light: #b8eaf7;
+  --text: #777;
+  --border: #aaa;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #252525;
+  background: #fff;
+}
+
+.contact-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  border: 3px solid #16a9f5;
+}
+
+/* Ikon home */
+.home-link {
+  position: absolute;
+  z-index: 3;
+  top: 42px;
+  left: 60px;
+  width: 48px;
+  height: 48px;
+  color: #929b9e;
+}
+
+.home-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dekorasi background */
+.decor {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.decor-left {
+  width: 780px;
+  height: 720px;
+  left: -255px;
+  top: 0;
+  background: #effaff;
+}
+
+.decor-bottom {
+  width: 420px;
+  height: 420px;
+  left: -110px;
+  bottom: -215px;
+  background: linear-gradient(135deg, #a9e5f5, #bdebf4);
+  border: 1px solid #81d5fa;
+}
+
+.decor-right {
+  width: 300px;
+  height: 300px;
+  right: -40px;
+  top: -50px;
+  border: 1px solid #8dd8ff;
+}
+
+.decor-right::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  background: #bceaf2;
+}
+
+/* Konten utama */
+.contact-content {
+  width: min(720px, calc(100% - 48px));
+  margin: 72px auto 60px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.contact-header h1 {
+  margin: 0 0 22px;
+  color: #075aa5;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.contact-header p {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+/* Form dua kolom */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+.form-field {
+  position: relative;
+  min-width: 0;
+  height: 58px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0 5px;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  background: transparent;
+  color: #555;
+  font: inherit;
+  font-size: 16px;
+}
+
+.form-field label {
+  position: absolute;
+  left: 0;
+  top: 17px;
+  color: #777;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label {
+  top: 0;
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.email-field {
+  grid-column: 2;
+  grid-row: 1;
+  border-bottom-color: var(--blue);
+}
+
+.email-field label,
+.phone-field label {
+  top: 0;
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.phone-field {
+  grid-column: 1;
+  grid-row: 2;
+  border-bottom-color: var(--blue);
+}
+
+.company-field {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.message-field {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  height: 128px;
+}
+
+.message-field textarea {
+  padding-top: 10px;
+}
+
+.message-field textarea::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+/* Checkbox dan tombol */
+.form-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 215px;
+  align-items: center;
+  gap: 30px;
+  margin-top: 8px;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.terms input {
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  margin: 5px 0 0;
+  accent-color: var(--blue);
+}
+
+.terms a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.submit-button {
+  min-height: 52px;
+  border: 0;
+  border-radius: 32px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #078fca;
+}
+
+/* Tampilan mobile */
+@media (max-width: 600px) {
+  .home-link {
+    top: 20px;
+    left: 20px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-content {
+    width: calc(100% - 36px);
+    margin-top: 85px;
+  }
+
+  .contact-header h1 {
+    font-size: 30px;
+  }
+
+  .contact-header p {
+    font-size: 15px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .form-field,
+  .email-field,
+  .phone-field,
+  .company-field,
+  .message-field {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .form-bottom {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .terms {
+    gap: 14px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .decor-left {
+    left: -450px;
+  }
+}

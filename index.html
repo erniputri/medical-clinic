@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Medical Light — informasi klinik, dokter, fasilitas, dan layanan kesehatan."
+    />
+    <title>Medical Light | Clinic & Healthcare</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+<header class="site-header container" id="home">
+      <a href="#" class="brand">
+        <img src="logo-medical.png" alt="Medical Logo">
+        <span>Medical</span>
+    </a>
+
+  <nav class="main-nav" aria-label="Navigasi utama">
+    <a class="active" href="#about">About</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#doctors">Ask Doctors</a>
+    <a href="#clinics">Clinics</a>
+    <a href="#contact">Contact Us</a>
+    <a class="settings-link" href="#contact" aria-label="Settings">⚙</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-content">
+      <h1>Protecting you and your family</h1>
+      <p>Your health and wellbeing is important for us.</p>
+
+      <form class="search-form" action="#doctors">
+        <label class="sr-only" for="doctor-search">
+          Cari nama dokter
+        </label>
+        <input
+          id="doctor-search"
+          type="search"
+          placeholder="Type doctor's name..."
+        >
+        <button type="submit">SEARCH</button>
+      </form>
+    </div>
+
+    <div class="hero-image">
+      <img
+        class="photo"
+        src="doctor-563429_1920.png"
+        alt="Dokter sedang melakukan pemeriksaan"
+      >
+      <button class="play-button" type="button" aria-label="Putar video">
+        ▶
+      </button>
+    </div>
+  </section>
+
+      <section class="about container" id="about">
+        <div class="about-visual">
+          <div class="about-circle">
+            <img
+              src="clinic-1807543_1280.png"
+              alt="Tenaga medis di ruang operasi"
+            />
+            <h2>About Us</h2>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <h2>Nulla lobortis nunc vitae nisi semper semper velit</h2>
+
+          <div class="stats">
+            <div>
+              <strong>+200</strong>
+              <span>Clinics</span>
+            </div>
+            <div>
+              <strong>+450</strong>
+              <span>Doctors</span>
+            </div>
+            <div>
+              <strong>24</strong>
+              <span>Hours Open</span>
+            </div>
+          </div>
+
+          <p class="muted">
+            Aliquam lobortis magna neque, gravida consequat velit venenatis at.
+            Pellentesque ac bibendum tortor, vel blandit nulla.
+          </p>
+        </div>
+      </section>
+
+<!-- gambar 3 foto keadaan -->
+      <section class="facility-section container" id="facilities">
+        <div class="facility-cards">
+          <article class="card">
+            <img
+              src="clinic-1807543_1280.png"
+              alt="Peralatan medis"
+            />
+            <h3>Quis fermentum</h3>
+            <p class="muted">
+              Aliquam consectetur lectus vel nulla posuere gravida ac euismod.
+            </p>
+            <a href="#clinics" class="button">See detail</a>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80"
+              alt="Ruang perawatan"/>
+            <h3>Duis fermentum</h3>
+            <p class="muted">
+              Nulla porttitor ligula euismod, semper lorem ac, tristique lectus.
+            </p>
+            <a href="#clinics" class="button">See detail</a>
+          </article>
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80"
+              alt="Tenaga medis"
+            />
+            <h3>Orci quam</h3>
+            <p class="muted">
+              Orci quam gravida eros, vel porttitor lectus lorem sit amet.
+            </p>
+            <a href="#clinics" class="button">See detail</a>
+          </article>
+        </div>
+
+        <aside class="facility-panel">
+          <div class="facility-icon">＋</div>
+          <h2>Clinic<br />Facility</h2>
+
+          <div class="facility-arrows">
+            <button type="button" aria-label="Fasilitas sebelumnya">‹</button>
+            <button type="button" aria-label="Fasilitas berikutnya">›</button>
+          </div>
+        </aside>
+      </section>
+
+      <!-- daftar spesialisasi dokter -->
+      <section class="specialty-section container" id="specialty">
+        <div class="specialty-visual">
+          <div class="specialty-orbit orbit-one"></div>
+          <div class="specialty-orbit orbit-two"></div>
+
+          <div class="specialty-center">Our<br />Speciality</div>
+
+          <span class="specialty-icon icon-top">✚</span>
+          <span class="specialty-icon icon-left">⚕</span>
+          <span class="specialty-icon icon-right">♥</span>
+          <span class="specialty-icon icon-bottom">♡</span>
+          <span class="specialty-icon icon-lower-left">◉</span>
+          <span class="specialty-icon icon-lower-right">ϟ</span>
+        </div>
+
+        <div class="specialty-content">
+          <h2>Nulla lobortis nunc vitae nisi semper semper velit</h2>
+
+          <p>
+            Curabitur egestas consequat lorem, vel fermentum augue porta id.
+            Aliquam consequat, nulla quis consequat venenatis at. Duis sed
+            augue.
+          </p>
+
+          <div class="tags">
+            <a href="#doctors">Dentist</a>
+            <a href="#doctors">Pediatric</a>
+            <a href="#doctors">Cardiology</a>
+            <a class="selected" href="#doctors">Orthopedic</a>
+            <a class="selected" href="#doctors">Traumatology</a>
+            <a class="selected" href="#doctors">Anesthesiology</a>
+            <a href="#doctors">Reumatologi</a>
+            <a href="#doctors">Andrologi</a>
+            <a href="#doctors">Orthodontia</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- dokter -->
+      <section class="container" id="doctors">
+        <h2>Ask Doctors</h2>
+        <div class="tags">
+          <a class="selected" href="#doctors">All</a>
+          <a href="#doctors">Orthopedic</a>
+          <a href="#doctors">Nutritionist</a>
+          <a href="#doctors">Pediatric</a>
+          <a href="#doctors">Anaesthetic</a>
+        </div>
+
+        <div class="grid doctor-grid">
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80"
+              alt="dr. Jena Doe"
+            />
+            <div>
+              <h3>dr. Jena Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=180&q=80"
+              alt="dr. Jean Doe"
+            />
+            <div>
+              <h3>dr. Jean Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=180&q=80"
+              alt="dr. John Doe"
+            />
+            <div>
+              <h3>dr. John Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=180&q=80"
+              alt="dr. James Doe"
+            />
+            <div>
+              <h3>dr. James Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=180&q=80"
+              alt="dr. Jim Doe"
+            />
+            <div>
+              <h3>dr. Jim Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+          <article class="card doctor-card">
+            <img
+              src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=180&q=80"
+              alt="dr. Joana Doe"
+            />
+            <div>
+              <h3>dr. Joana Doe</h3>
+              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
+              <a href="#contact" class="button">Chat</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- testimoni -->
+      <section class="container">
+        <h2>People Testimonials</h2>
+        <div class="grid">
+          <article class="card">
+            <p>Sed imperdiet enim ligula, vitae viverra justo porta vel.</p>
+            <p class="stars" aria-label="4 dari 5 bintang">★★★★☆</p>
+            <strong>John Doe</strong> <span class="muted">· Patient</span>
+          </article>
+          <article class="card">
+            <p>Sed imperdiet enim ligula, vitae viverra justo porta vel.</p>
+            <p class="stars" aria-label="4 dari 5 bintang">★★★★☆</p>
+            <strong>Jean Doe</strong> <span class="muted">· House Wife</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="cta">
+          <div>
+            <h2>Ready to get started?</h2>
+            <p class="muted">
+              Pellentesque ac bibendum tortor. Nulla eget lobortis.
+            </p>
+          </div>
+          <a href="#contact" class="button">Create appointment now</a>
+        </div>
+      </section>
+
+      <!-- alamat -->
+      <section class="clinics container" id="clinics">
+        <div>
+          <h2>Our Clinics</h2>
+          <article>
+            <h3>Bibendum Medical Center</h3>
+            <p class="muted">+62 765 432 10 · medical@clinic.com</p>
+            <p class="muted">
+              Veterans Street Block C, Pekanbaru, Riau — 3rd Floor
+            </p>
+          </article>
+          <article>
+            <h3>Bibendum Medical Center</h3>
+            <p class="muted">+62 765 432 10 · medical@clinic.com</p>
+            <p class="muted">
+              Veterans Street Block C, Pekanbaru, Riau — 3rd Floor
+            </p>
+          </article>
+        </div>
+        <img
+          class="photo"
+          src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?auto=format&fit=crop&w=1200&q=85"
+          alt="Peta area kota dengan jalan dan penanda lokasi"
+        />
+      </section>
+    </main>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer container" id="contact">
+      <div>
+        <a class="brand" href="#home"
+          ><span class="brand-mark">M</span> Medical</a
+        >
+        <p class="muted">
+          Aliquam lobortis magna neque, gravida consequat velit venenatis at.
+        </p>
+        <small class="muted">© 2026 Medical. All rights reserved.</small>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <a href="#about">About Us</a>
+        <a href="#doctors">Medical Profile</a>
+        <a href="#contact">Career</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="#facilities">Medical Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#clinics">Clinic Location</a>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <a href="#contact">Support Center</a>
+        <a href="#contact">Help Center</a>
+        <a href="#contact">Our Partners</a>
+      </div>
+    </footer>
+  </body>
+</html>
