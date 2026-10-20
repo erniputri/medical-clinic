@@ -98,7 +98,6 @@ p {
 }
 
 /* 2. HEADER DAN NAVIGASI*/
-
 .site-header {
   position: relative;
   z-index: 10;
@@ -214,7 +213,7 @@ p {
 }
 
 .hero-content h1 {
-  max-width: 540px;
+  max-width: 340px;
   margin-bottom: 24px;
   color: #25292c;
   font-size: clamp(42px, 4.8vw, 68px);
@@ -701,31 +700,34 @@ p {
 }
 
 .icon-left {
-  top: 24%;
+  top: 10%;
   left: 0;
   background: var(--blue);
 }
 
 .icon-right {
-  top: 36%;
+  top: 65%;
   right: 0;
   background: #ff398c;
 }
 
+/* line pink */
 .icon-bottom {
-  right: 18%;
+  right: 9%;
   bottom: 0;
   background: #ff398c;
 }
 
+/* detak jantung bawah */
 .icon-lower-left {
-  bottom: 16%;
-  left: 10%;
+  bottom: 17%;
+  left: 9%;
 }
 
+/* bunga biru */
 .icon-lower-right {
-  right: 5%;
-  bottom: 22%;
+  right: 12%;
+  bottom: 55%;
   background: var(--blue);
 }
 
@@ -872,51 +874,202 @@ main > section.container > .grid:not(.doctor-grid) .card p {
   background: var(--blue-dark);
 }
 
-/*11. OUR CLINICS*/
+/* OUR CLINICS */
 .clinics {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr);
   align-items: center;
-  gap: 50px;
-  padding-top: 65px;
-  padding-bottom: 75px;
-}
-
-.clinics article {
-  margin-bottom: 25px;
-}
-
-.clinics article:last-child {
-  margin-bottom: 0;
-}
-
-.clinics article h3 {
-  margin-bottom: 8px;
-}
-
-.clinics article p {
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.clinics > img {
+  gap: 24px;
   width: 100%;
-  height: 350px;
-  border-radius: 18px;
-  object-fit: cover;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 44px 24px 50px 7.2%;
+  overflow: hidden;
+  isolation: isolate;
+  box-sizing: border-box;
 }
 
-/* 12. FOOTER*/
+/* Lengkungan biru pucat di belakang informasi klinik */
+.clinics::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 660px;
+  height: 770px;
+  left: -20px;
+  top: -20px;
+  background: #eefaff;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.clinics-info {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding-right: 4px;
+}
+
+.clinics-info > h2 {
+  margin: 0 0 60px;
+  font-size: clamp(36px, 4vw, 62px);
+  line-height: 1.15;
+  color: #25292c;
+}
+
+.clinic-item {
+  margin: 0 0 50px;
+}
+
+.clinic-item h3 {
+  margin: 0 0 20px;
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.clinic-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 30px;
+  margin-bottom: 18px;
+}
+
+.clinic-contact p,
+.clinic-address {
+  margin: 0;
+  color: #25292c;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.clinic-contact span,
+.clinic-address span {
+  color: #08a8e8;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.clinic-address span {
+  display: inline-block;
+  font-size: 17px;
+}
+
+.clinics-map {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  min-height: 600px;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 20px 0 0 0;
+  box-shadow: 0 0 25px rgba(38, 55, 65, 0.12);
+}
+
+.clinics-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  border: 0;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .clinics {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 25px;
+    padding-left: 4%;
+  }
+
+  .clinics::before {
+    width: 55%;
+  }
+
+  .clinics-info > h2 {
+    margin-bottom: 40px;
+  }
+
+  .clinic-item {
+    margin-bottom: 35px;
+  }
+
+  .clinics-map,
+  .clinics-map iframe {
+    min-height: 580px;
+  }
+}
+
+/* HP */
+@media (max-width: 700px) {
+  .clinics {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 40px 18px 0;
+  }
+
+  .clinics::before {
+    width: 100%;
+    height: 650px;
+    border-radius: 0 0 45% 0;
+  }
+
+  .clinics-info {
+    padding-bottom: 10px;
+  }
+
+  .clinics-info > h2 {
+    margin-bottom: 35px;
+    font-size: 38px;
+  }
+
+  .clinic-item {
+    margin-bottom: 30px;
+  }
+
+  .clinic-item h3 {
+    margin-bottom: 12px;
+    font-size: 17px;
+  }
+
+  .clinic-contact {
+    gap: 8px 18px;
+  }
+
+  .clinic-contact p,
+  .clinic-address {
+    font-size: 14px;
+  }
+
+  .clinics-map,
+  .clinics-map iframe {
+    min-height: 380px;
+    height: 380px;
+    border-radius: 14px 14px 0 0;
+  }
+}
+
+/* 12. FOOTER */
 .site-footer {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-top: 55px;
+  grid-template-columns: 1.5fr 0.85fr 0.85fr 0.85fr 1.2fr;
+  gap: 28px;
+  align-items: start;
+  padding-top: 35px;
   padding-bottom: 35px;
   border-top: 1px solid #e5edf0;
 }
 
+.site-footer > div {
+  min-width: 0;
+}
+
+/* Logo dan deskripsi */
 .site-footer .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 18px;
   font-size: 21px;
 }
@@ -927,31 +1080,120 @@ main > section.container > .grid:not(.doctor-grid) .card p {
   border-width: 4px;
 }
 
-.site-footer h3 {
-  margin-bottom: 18px;
-  color: var(--blue-dark);
-  font-size: 15px;
-}
-
-.site-footer a:not(.brand) {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.site-footer a:not(.brand):hover {
-  color: var(--blue-dark);
-}
-
 .site-footer p {
   max-width: 330px;
+  margin: 0 0 30px;
   font-size: 14px;
   line-height: 1.8;
 }
 
 .site-footer small {
   font-size: 12px;
+}
+
+/* Kolom navigasi */
+.site-footer h3 {
+  margin: 5px 0 22px;
+  color: #079fe8;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.site-footer a:not(.brand) {
+ 
+  color: var(--muted);
+  font-size: 14px;
+
+}
+
+.site-footer a:not(.brand):hover {
+  color: var(--blue-dark);
+}
+
+
+/* Pilihan bahasa */
+.footer-language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 54px;
+  padding: 0 14px;
+
+  border: 1px solid #079fe8;
+  border-radius: 12px;
+  background: #fff;
+  color: #079fe8;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.language-globe {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.language-arrow {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(45deg) translateY(-3px);
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .site-footer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+
+  .footer-extra {
+    grid-column: 1 / -1;
+    max-width: 360px;
+  }
+
+  .footer-socials {
+    justify-content: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .site-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+    padding-top: 30px;
+  }
+
+  .footer-brand,
+  .footer-extra {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer p {
+    margin-bottom: 20px;
+  }
+
+  .footer-socials {
+    gap: 14px;
+  }
+
+  .footer-socials a {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 /*13. RESPONSIVE TABLET*/
@@ -1234,11 +1476,19 @@ main > section.container > .grid:not(.doctor-grid) .card p {
     padding: 25px;
   }
 
+  /* OUR CLINIC */
   .clinics {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding-top: 40px;
-    padding-bottom: 50px;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 65px 0 0 7.5%;
+    overflow: hidden;
+    isolation: isolate;
   }
 
   .clinics > img {
@@ -1296,5 +1546,1098 @@ main > section.container > .grid:not(.doctor-grid) .card p {
 
   .site-footer {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Ikon kontak klinik dari aset project */
+.clinic-contact p {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.clinic-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.clinic-address {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* FIX FINAL: SOCIAL ICONS & LANGUAGE */
+.site-footer .footer-extra {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* IKON SOSIAL - FIGMA */
+.site-footer .footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 58px;
+}
+
+.site-footer .footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ededed;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.site-footer .footer-socials img {
+
+  width: 27px;
+  height: 27px;
+  margin: 0;
+  object-fit: contain;
+}
+
+
+.site-footer .footer-socials a:hover {
+  background: #e2e2e2;
+}
+
+.site-footer .footer-language {
+  display: grid;
+  grid-template-columns: 24px 1fr 12px;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 14px;
+  margin: 0;
+  border: 1px solid #079fe8;
+  border-radius: 12px;
+  background: #fff;
+  color: #079fe8;
+  box-sizing: border-box;
+}
+
+.site-footer .language-globe {
+  justify-self: start;
+  font-size: 20px;
+}
+
+.site-footer .language-arrow {
+  justify-self: end;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(45deg) translateY(-2px);
+}
+
+/* NAVIGATION DI SAMPING PETA */
+.clinics-map {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 650px;
+  overflow: visible;
+}
+
+.clinics-map-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.map-navigation {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  width: 30px;
+  overflow: visible;
+}
+
+.map-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.map-nav-item img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  max-width: none;
+  object-fit: contain;
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(45deg);
+}
+
+
+.back-to-top {
+  position: absolute;
+  right: -28px;
+  bottom: -30px;
+  z-index: 6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #aee7fb;
+}
+
+
+.back-to-top img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+
+/* Rapikan penanda navigasi di sisi peta klinik */
+.clinics-map .map-navigation {
+  top: 72%;
+  right: -28px;
+  gap: 8px;
+  width: 24px;
+}
+
+.clinics-map .map-nav-item {
+  width: 24px;
+  height: 26px;
+  flex-basis: 26px;
+}
+
+.clinics-map .map-nav-item img {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #a9cde0;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Susunan kontrol peta mengikuti acuan Figma */
+.clinics-map .map-navigation {
+  top: auto;
+  right: -28px;
+  bottom: 8px;
+  gap: 10px;
+  width: 30px;
+}
+
+.clinics-map .map-nav-item {
+  width: 28px;
+  height: 26px;
+  flex-basis: 26px;
+}
+
+.clinics-map .map-nav-item:nth-child(n + 4) {
+  display: none;
+}
+
+.clinics-map .map-nav-item:nth-child(3) {
+  position: absolute;
+  right: 28px;
+  bottom: 4px;
+  width: auto;
+  height: 26px;
+  flex-basis: auto;
+  padding: 0 8px;
+  background: #08a9ed;
+  color: #fff;
+  font-size: 12px;
+  line-height: 26px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.clinics-map .map-nav-item:nth-child(3)::after {
+  content: 'Services';
+}
+
+.clinics-map .map-nav-item:nth-child(3) img {
+  display: none;
+}
+
+.clinics-map .map-navigation::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  bottom: 5px;
+  width: 12px;
+  height: 12px;
+  background: #8c43ff;
+  transform: rotate(45deg);
+}
+
+/* Detail posisi kontrol sesuai crop Figma */
+.clinics-map .map-navigation {
+  bottom: 8px;
+  right: -28px;
+  height: 156px;
+  display: block;
+}
+
+.clinics-map .map-nav-item {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.clinics-map .map-nav-item:nth-child(1) { bottom: 130px; }
+.clinics-map .map-nav-item:nth-child(2) { bottom: 94px; }
+.clinics-map .map-nav-item:nth-child(4) { bottom: 58px; display: flex; }
+.clinics-map .map-nav-item:nth-child(5) { bottom: 22px; display: flex; }
+
+.clinics-map .map-nav-item:nth-child(3) {
+  right: 28px;
+  bottom: 20px;
+}
+
+.clinics-map .map-navigation::after {
+  right: -3px;
+  bottom: 27px;
+  width: 10px;
+  height: 10px;
+  background: #08a9ed;
+}
+
+.clinics-map .back-to-top {
+  right: -28px;
+  bottom: -48px;
+}
+
+/* Panah kembali ke atas berada di bawah sisi kanan peta */
+.clinics-map .back-to-top {
+  right: -55px;
+  bottom: -132px;
+  width: 54px;
+  height: 54px;
+}
+
+.clinics-map .back-to-top img {
+  width: 27px;
+  height: 27px;
+}
+
+/* Jangan potong tombol panah yang berada di bawah peta */
+.clinics {
+  overflow: visible;
+}
+
+.clinics-map {
+  overflow: visible;
+}
+
+.clinics-map .back-to-top {
+  z-index: 31;
+}
+
+/* Lima wajik navigasi: posisi tengah aktif, lainnya outline */
+.clinics-map .map-navigation {
+  bottom: 8px;
+  right: -28px;
+  height: 190px;
+}
+
+.clinics-map .map-nav-item {
+  right: 0;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  background: transparent;
+}
+
+.clinics-map .map-nav-item:nth-child(1) { bottom: 166px; }
+.clinics-map .map-nav-item:nth-child(2) { bottom: 130px; }
+.clinics-map .map-nav-item:nth-child(3) {
+  right: 0;
+  bottom: 94px;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  background: transparent;
+}
+.clinics-map .map-nav-item:nth-child(4) { bottom: 58px; }
+.clinics-map .map-nav-item:nth-child(5) { bottom: 22px; }
+
+.clinics-map .map-nav-item img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #9fcde4;
+  border-radius: 3px;
+  background: transparent;
+  transform: rotate(45deg);
+}
+
+.clinics-map .map-nav-item:nth-child(3) img {
+  border-color: #08a9ed;
+  background: #08a9ed;
+}
+
+.clinics-map .map-nav-item:nth-child(3)::after {
+  content: none;
+}
+
+.clinics-map .map-navigation::before {
+  content: 'Services';
+  position: absolute;
+  right: 28px;
+  bottom: 94px;
+  padding: 4px 8px;
+  background: #08a9ed;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.clinics-map .map-navigation::after {
+  content: none;
+}
+
+/* Gunakan aset rectangleks untuk outline dan rectangle.png untuk indikator aktif */
+.clinics-map .map-nav-item img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform: rotate(45deg);
+}
+
+.clinics-map .map-nav-item:nth-child(3) img {
+  display: block;
+}
+
+.clinics-map .map-nav-item:nth-child(3)::after {
+  content: none;
+}
+
+/* Tampilkan ikon sesuai bentuk dan warna dari file aset */
+.clinics-map .map-nav-item img {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  transform: none;
+  object-fit: contain;
+}
+
+.clinics-map .map-nav-item:nth-child(3) img {
+  border: 0;
+  background: transparent;
+}
+
+/* Jarak antarwajik dan tombol mengikuti tampilan acuan */
+.clinics-map .map-navigation {
+  height: 300px;
+}
+
+.clinics-map .map-nav-item:nth-child(1) { bottom: 260px; }
+.clinics-map .map-nav-item:nth-child(2) { bottom: 200px; }
+.clinics-map .map-nav-item:nth-child(3) { bottom: 140px; }
+.clinics-map .map-nav-item:nth-child(4) { bottom: 80px; }
+.clinics-map .map-nav-item:nth-child(5) { bottom: 20px; }
+
+.clinics-map .map-navigation::before {
+  bottom: 140px;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 5px 10px;
+}
+
+.clinics-map .back-to-top {
+  width: 64px;
+  height: 64px;
+}
+
+.clinics-map .back-to-top img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Kembalikan jarak dan ukuran kontrol yang sebelumnya sudah pas */
+.clinics-map .map-navigation {
+  height: 190px;
+}
+
+.clinics-map .map-nav-item:nth-child(1) { bottom: 166px; }
+.clinics-map .map-nav-item:nth-child(2) { bottom: 130px; }
+.clinics-map .map-nav-item:nth-child(3) { bottom: 94px; }
+.clinics-map .map-nav-item:nth-child(4) { bottom: 58px; }
+.clinics-map .map-nav-item:nth-child(5) { bottom: 22px; }
+
+.clinics-map .map-navigation::before {
+  bottom: 94px;
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.clinics-map .back-to-top {
+  width: 54px;
+  height: 54px;
+}
+
+.clinics-map .back-to-top img {
+  width: 27px;
+  height: 27px;
+}
+
+/* CTA disesuaikan dengan desain Figma */
+.cta {
+  width: min(100%, 1072px);
+  min-height: 149px;
+  margin-inline: auto;
+  padding: 24px 46px 24px 32px;
+  border: 2px solid #00a9f4;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(38, 55, 65, 0.1);
+}
+
+.cta h2 {
+  margin-bottom: 12px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.cta p {
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.cta .button {
+  min-width: 348px;
+  min-height: 78px;
+  padding: 18px 28px;
+  background: #08a9ed;
+  font-size: 18px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 18px rgba(38, 55, 65, 0.2);
+}
+
+@media (max-width: 700px) {
+  .cta {
+    min-height: 0;
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .cta h2 {
+    font-size: 26px;
+  }
+
+  .cta p {
+    font-size: 17px;
+  }
+
+  .cta .button {
+    min-width: 0;
+    min-height: 58px;
+    font-size: 14px;
+  }
+}
+
+.cta p {
+  color: #262a2d;
+}
+
+/* Perapian section spesialisasi mengikuti proporsi desain */
+.specialty-section {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.specialty-section .specialty-visual {
+  width: min(100%, 560px);
+}
+
+.specialty-section .orbit-one {
+  inset: 0;
+}
+
+.specialty-section .orbit-two {
+  inset: 15%;
+}
+
+.specialty-section .specialty-center {
+  width: 48%;
+  font-size: clamp(30px, 3.6vw, 46px);
+}
+
+.specialty-section .specialty-content h2 {
+  font-size: clamp(30px, 3vw, 38px);
+  line-height: 1.45;
+}
+
+.specialty-section .specialty-content > p {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.specialty-section .icon-top {
+  width: 88px;
+  height: 88px;
+  font-size: 34px;
+}
+
+.specialty-section .icon-left {
+  width: 102px;
+  height: 102px;
+  font-size: 42px;
+}
+
+.specialty-section .icon-right {
+  width: 38px;
+  height: 38px;
+  font-size: 19px;
+}
+
+.specialty-section .icon-bottom {
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+}
+
+.specialty-section .icon-lower-left {
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+}
+
+.specialty-section .icon-lower-right {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+}
+
+@media (max-width: 700px) {
+  .specialty-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .specialty-section .specialty-visual {
+    width: min(100%, 380px);
+  }
+
+  .specialty-section .specialty-center {
+    font-size: clamp(26px, 8vw, 38px);
+  }
+}
+
+/* Ikon gambar di lingkaran spesialisasi */
+.specialty-section .specialty-icon img {
+  display: block;
+  width: 56%;
+  height: 56%;
+  object-fit: contain;
+}
+
+.specialty-section .icon-right img,
+.specialty-section .icon-lower-left img {
+  width: 62%;
+  height: 62%;
+}
+
+.specialty-section .icon-lower-left {
+  background: #ff398c;
+}
+
+.specialty-section .icon-wifi {
+  position: absolute;
+  left: 22%;
+  bottom: 29%;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: var(--shadow);
+}
+
+.specialty-section .icon-wifi img {
+  width: 62%;
+  height: 62%;
+}
+
+/* Posisi ikon mengikuti titik pada orbit desain */
+.specialty-section .icon-top {
+  top: -6%;
+}
+
+.specialty-section .icon-left {
+  top: 16%;
+  left: -4%;
+}
+
+.specialty-section .icon-right {
+  top: 17%;
+  right: auto;
+  left: 72%;
+}
+
+.specialty-section .icon-lower-right {
+  top: 36%;
+  right: 12%;
+  bottom: auto;
+}
+
+.specialty-section .icon-bottom {
+  right: 20%;
+  bottom: 10%;
+}
+
+.specialty-section .icon-wifi {
+  left: 15%;
+  bottom: 28%;
+}
+
+.specialty-section .icon-lower-left {
+  left: 5%;
+  bottom: 15%;
+}
+
+/* Dekorasi oval header menggunakan ukuran dan posisi dari Figma */
+.site-header {
+  z-index: 10;
+  background: transparent;
+}
+
+.hero-background {
+  display: contents;
+}
+
+.hero-background .oval {
+  position: absolute;
+  display: block;
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.hero-background .oval-main {
+  z-index: 0;
+  left: 229px;
+  top: -198px;
+  width: 934.5px;
+  transform: rotate(0deg);
+}
+
+.hero-background .oval-side {
+  z-index: 0;
+  left: 448px;
+  top: -318px;
+  right: auto;
+  width: 639px;
+  transform: rotate(0deg);
+}
+
+.hero::before,
+.hero::after {
+  content: none;
+}
+
+@media (min-width: 701px) {
+  .hero {
+    overflow: visible;
+  }
+}
+
+/* ===== CLINIC FACILITY ===== */
+
+.facility-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.9fr);
+  align-items: stretch;
+  gap: 24px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.facility-cards {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  min-width: 0;
+}
+
+.facility-section .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(25, 50, 65, 0.10);
+}
+
+.facility-section .card > img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px 12px 30px 0;
+}
+
+.facility-section .card h3 {
+  margin: 16px 14px 8px;
+  font-size: 15px;
+}
+
+.facility-section .card p {
+  margin: 0 14px 18px;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.facility-section .card .button {
+  align-self: flex-end;
+  margin-top: auto;
+  margin-left: 10px;
+  padding: 12px 20px;
+  border-radius: 24px 0 10px 0;
+  background: #45b456;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Panel kanan */
+
+.facility-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 400px;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.facility-oval {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 125%;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.facility-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  object-fit: contain;
+}
+
+.facility-panel h2 {
+  margin: 0;
+  color: #075c9e;
+  font-size: clamp(28px, 2.5vw, 38px);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.facility-arrows {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.facility-arrows button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #348e43;
+  font-size: 28px;
+  box-shadow: 0 5px 18px rgba(25, 50, 65, 0.10);
+  cursor: pointer;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .facility-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .facility-panel {
+    min-height: 320px;
+  }
+
+  .facility-oval {
+    width: 80%;
+  }
+}
+
+/* HP */
+
+@media (max-width: 600px) {
+  .facility-cards {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .facility-section .card > img {
+    height: 200px;
+  }
+
+  .facility-panel {
+    min-height: 300px;
+  }
+
+  .facility-oval {
+    width: 110%;
+  }
+}
+
+/* Rapikan tinggi kartu Clinic Facility */
+.facility-section .card {
+  min-height: 0;
+  height: 310px;
+}
+
+/* Ukuran gambar kartu */
+.facility-section .card > img {
+  height: 130px;
+  flex-shrink: 0;
+}
+
+/* Rapikan jarak konten kartu */
+.facility-section .card h3 {
+  margin-top: 14px;
+  margin-bottom: 7px;
+}
+
+.facility-section .card p {
+  margin-bottom: 12px;
+}
+
+/* Pertahankan tombol di bagian bawah kartu */
+.facility-section .card .button {
+  margin-top: auto;
+}
+
+
+/* Tata letak Ask Doctors mengikuti Figma: filter di kiri, kartu 2 kolom */
+@media (min-width: 901px) {
+  #doctors {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1.58fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 42px;
+    align-items: start;
+  }
+
+  #doctors > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 190px;
+  }
+
+  #doctors > .tags {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin: 0;
+  }
+
+  #doctors > .tags a {
+    justify-content: flex-start;
+    border-color: transparent;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  #doctors > .tags a.selected {
+    border-color: transparent;
+    border-radius: 24px;
+    background: var(--blue-light);
+    color: var(--blue-dark);
+  }
+
+  #doctors > .doctor-grid {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px 56px;
+    align-self: start;
+  }
+
+  #doctors .doctor-card {
+    position: relative;
+    display: block;
+    min-height: 162px;
+    padding: 14px 16px 12px 111px;
+  }
+
+  #doctors .doctor-card > img {
+    position: absolute;
+    top: -19px;
+    left: -16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 0 50% 50% 50%;
+    object-fit: cover;
+  }
+
+  #doctors .doctor-card-content {
+    display: flex;
+    min-height: 136px;
+    flex-direction: column;
+  }
+
+  #doctors .doctor-card-heading h3 {
+    margin: 0 0 2px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  #doctors .doctor-card-heading p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  #doctors .doctor-card-details {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e8e8e8;
+    color: #888;
+    font-size: 14px;
+  }
+
+  #doctors .doctor-card-details .button {
+    margin-left: auto;
+    padding: 8px 22px;
+  }
+}
+
+/* Penyesuaian jarak dan tipografi kartu Ask Doctors sesuai Figma */
+@media (min-width: 901px) {
+  #doctors {
+    width: min(1226px, calc(100% - 64px));
+    grid-template-columns: minmax(180px, 211px) minmax(0, 863px);
+    column-gap: 69px;
+  }
+
+  #doctors > h2 {
+    margin-bottom: 45px;
+    font-size: 54px;
+    line-height: 1.25;
+  }
+
+  #doctors > .tags {
+    gap: 17px;
+  }
+
+  #doctors > .tags a {
+    min-height: 40px;
+    padding: 4px 16px;
+    font-size: 24px;
+  }
+
+  #doctors > .doctor-grid {
+    width: 100%;
+    margin-top: 12px;
+    gap: 42px 73px;
+  }
+
+  #doctors .doctor-card-heading h3 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  #doctors .doctor-card-heading p {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  #doctors .doctor-card-details {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 901px) {
+  #doctors .doctor-meta-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    object-fit: contain;
+  }
+
+  #doctors .doctor-rating,
+  #doctors .doctor-experience {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
   }
 }

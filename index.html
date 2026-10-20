@@ -30,6 +30,11 @@
 
 <main>
   <section class="hero container">
+    <div class="hero-background">
+      <img src="oval-header.png" class="oval oval-main" alt="">
+      <img src="oval-header-samping.png" class="oval oval-side" alt="">
+    </div>
+
     <div class="hero-content">
       <h1>Protecting you and your family</h1>
       <p>Your health and wellbeing is important for us.</p>
@@ -95,54 +100,69 @@
         </div>
       </section>
 
-<!-- gambar 3 foto keadaan -->
-      <section class="facility-section container" id="facilities">
-        <div class="facility-cards">
-          <article class="card">
-            <img
-              src="clinic-1807543_1280.png"
-              alt="Peralatan medis"
-            />
-            <h3>Quis fermentum</h3>
-            <p class="muted">
-              Aliquam consectetur lectus vel nulla posuere gravida ac euismod.
-            </p>
-            <a href="#clinics" class="button">See detail</a>
-          </article>
 
-          <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80"
-              alt="Ruang perawatan"/>
-            <h3>Duis fermentum</h3>
-            <p class="muted">
-              Nulla porttitor ligula euismod, semper lorem ac, tristique lectus.
-            </p>
-            <a href="#clinics" class="button">See detail</a>
-          </article>
-          <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=700&q=80"
-              alt="Tenaga medis"
-            />
-            <h3>Orci quam</h3>
-            <p class="muted">
-              Orci quam gravida eros, vel porttitor lectus lorem sit amet.
-            </p>
-            <a href="#clinics" class="button">See detail</a>
-          </article>
-        </div>
+<section class="facility-section container" id="facilities">
 
-        <aside class="facility-panel">
-          <div class="facility-icon">＋</div>
-          <h2>Clinic<br />Facility</h2>
+  <div class="facility-cards">
+    <article class="card">
+      <img
+        src="ruang-operasi.jpg"
+        alt="Ruang operasi rumah sakit"
+      />
+      <h3>Duis fermentum</h3>
+      <p class="muted">
+        Quisque consectetur lectus vel orci porttitor gravida ac euismod.
+        Nullam accumsan.
+      </p>
+      <a href="#clinics" class="button">SEE DETAIL</a>
+    </article>
 
-          <div class="facility-arrows">
-            <button type="button" aria-label="Fasilitas sebelumnya">‹</button>
-            <button type="button" aria-label="Fasilitas berikutnya">›</button>
-          </div>
-        </aside>
-      </section>
+    <article class="card">
+      <img
+        src="ruangan.jpg"
+        alt="Ruang perawatan pasien"
+      />
+      <h3>Duis fermentum</h3>
+      <p class="muted">
+        Quisque consectetur lectus vel orci porttitor gravida ac euismod.
+        Nullam accumsan.
+      </p>
+      <a href="#clinics" class="button">SEE DETAIL</a>
+    </article>
+
+    <article class="card">
+      <img
+        src="clinic-1807543_1280.png"
+        alt="Fasilitas dan peralatan medis"
+      />
+      <h3>Duis fermentum</h3>
+      <p class="muted">
+        Quisque consectetur lectus vel orci porttitor gravida ac euismod.
+        Nullam accumsan.
+      </p>
+      <a href="#clinics" class="button">SEE DETAIL</a>
+    </article>
+  </div>
+
+  <aside class="facility-panel">
+    <img src="oval.png" alt="" class="facility-oval">
+
+    <img
+      src="circle-rectangle.png"
+      alt=""
+      class="facility-icon"
+    />
+
+    <h2>Clinic<br>Facility</h2>
+
+    <div class="facility-arrows">
+      <button type="button" aria-label="Fasilitas sebelumnya">‹</button>
+      <button type="button" aria-label="Fasilitas berikutnya">›</button>
+    </div>
+  </aside>
+
+</section>
+
 
       <!-- daftar spesialisasi dokter -->
       <section class="specialty-section container" id="specialty">
@@ -152,12 +172,13 @@
 
           <div class="specialty-center">Our<br />Speciality</div>
 
-          <span class="specialty-icon icon-top">✚</span>
-          <span class="specialty-icon icon-left">⚕</span>
-          <span class="specialty-icon icon-right">♥</span>
-          <span class="specialty-icon icon-bottom">♡</span>
-          <span class="specialty-icon icon-lower-left">◉</span>
-          <span class="specialty-icon icon-lower-right">ϟ</span>
+          <span class="specialty-icon icon-top"><img src="medkit.png" alt=""/></span>
+          <span class="specialty-icon icon-left"><img src="camera.png" alt="" /></span>
+          <span class="specialty-icon icon-right"><img src="heart.png" alt="" /></span>
+          <span class="specialty-icon icon-bottom"><img src="line.png" alt="" /></span>
+          <span class="specialty-icon icon-lower-left"><img src="android-contacts.png" alt="" /></span>
+          <span class="specialty-icon icon-wifi"><img src="wifi.png" alt="" /></span>
+          <span class="specialty-icon icon-lower-right"><img src="group.png" alt="" /></span>
         </div>
 
         <div class="specialty-content">
@@ -197,68 +218,104 @@
         <div class="grid doctor-grid">
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=180&q=80"
+              src="dr-jena.jpg"
               alt="dr. Jena Doe"
             />
-            <div>
-              <h3>dr. Jena Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. Jena Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=180&q=80"
+              src="dr-jean.jpg"
               alt="dr. Jean Doe"
             />
-            <div>
-              <h3>dr. Jean Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. Jean Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=180&q=80"
+              src="dr-john.jpg"
               alt="dr. John Doe"
             />
-            <div>
-              <h3>dr. John Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. John Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=180&q=80"
+              src="dr-james.jpg"
               alt="dr. James Doe"
             />
-            <div>
-              <h3>dr. James Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. James Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=180&q=80"
+              src="dr-jim.jpg"
               alt="dr. Jim Doe"
             />
-            <div>
-              <h3>dr. Jim Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. Jim Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
           <article class="card doctor-card">
             <img
-              src="https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=180&q=80"
+              src="dr-joana.jpg"
               alt="dr. Joana Doe"
             />
-            <div>
-              <h3>dr. Joana Doe</h3>
-              <p class="muted">Pediatric Surgeon · 95% · 4 Years</p>
-              <a href="#contact" class="button">Chat</a>
+            <div class="doctor-card-content">
+              <div class="doctor-card-heading">
+                <h3>dr. Joana Doe</h3>
+                <p class="muted">Pediatric Surgeon</p>
+              </div>
+              <div class="doctor-card-details">
+                <span class="doctor-rating"><img class="doctor-meta-icon" src="jempol.png" alt=""> 95%</span>
+                <span class="doctor-experience"><img class="doctor-meta-icon" src="tanggal.png" alt=""> 4 Years</span>
+                <a href="#contact" class="button">CHAT</a>
+              </div>
             </div>
           </article>
         </div>
@@ -289,67 +346,176 @@
               Pellentesque ac bibendum tortor. Nulla eget lobortis.
             </p>
           </div>
-          <a href="#contact" class="button">Create appointment now</a>
+          <a href="#contact" class="button">CREATE APPOINMENT NOW!</a>
         </div>
       </section>
 
       <!-- alamat -->
-      <section class="clinics container" id="clinics">
-        <div>
-          <h2>Our Clinics</h2>
-          <article>
-            <h3>Bibendum Medical Center</h3>
-            <p class="muted">+62 765 432 10 · medical@clinic.com</p>
-            <p class="muted">
-              Veterans Street Block C, Pekanbaru, Riau — 3rd Floor
-            </p>
-          </article>
-          <article>
-            <h3>Bibendum Medical Center</h3>
-            <p class="muted">+62 765 432 10 · medical@clinic.com</p>
-            <p class="muted">
-              Veterans Street Block C, Pekanbaru, Riau — 3rd Floor
-            </p>
-          </article>
-        </div>
-        <img
-          class="photo"
-          src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?auto=format&fit=crop&w=1200&q=85"
-          alt="Peta area kota dengan jalan dan penanda lokasi"
-        />
-      </section>
-    </main>
-    </main>
+<section class="clinics" id="clinics">
+  <div class="clinics-info">
+    <h2>Our Clinics</h2>
+
+    <article class="clinic-item">
+      <h3>Bibendum Medical Center</h3>
+      <div class="clinic-contact">
+        <p><img src="android-call.png" alt="" class="clinic-icon">
+    +98 765 432 10
+  </p>
+    <p><img src="android-drafts.png" alt="" class="clinic-icon">
+    hello@luxi.com
+  </p>
+      </div>
+      <p class="clinic-address">
+        <img src="android-pin.png" alt="" class="clinic-icon">Vivamus street&nbsp; Block C - Vestibulum Building - 3rd Floor
+      </p>
+    </article>
+
+  
+<article class="clinic-item">
+  <h3>Bibendum Medical Center</h3>
+  <div class="clinic-contact">
+    <p><img src="android-call.png" alt="" class="clinic-icon">
+      +98 765 432 10
+    </p>
+    <p><img src="android-drafts.png" alt="" class="clinic-icon">
+      hello@luxi.com
+    </p>
+  </div>
+  <p class="clinic-address">
+        <img src="android-pin.png" alt="" class="clinic-icon">
+    Vivamus street&nbsp; Block C - Vestibulum Building - 3rd Floor
+  </p>
+</article>
+
+<article class="clinic-item">
+  <h3>Bibendum Medical Center</h3>
+  <div class="clinic-contact">
+    <p><img src="android-call.png" alt="" class="clinic-icon">
+      +98 765 432 10
+    </p>
+    <p><img src="android-drafts.png" alt="" class="clinic-icon">
+      hello@luxi.com
+    </p>
+  </div>
+
+  <p class="clinic-address">
+        <img src="android-pin.png" alt="" class="clinic-icon">
+    Vivamus street&nbsp; Block C - Vestibulum Building - 3rd Floor
+  </p>
+</article>
+
+
+    <article class="clinic-item">
+      <h3>Bibendum Medical Center</h3>
+      <div class="clinic-contact">
+        <p><img src="android-call.png" alt="" class="clinic-icon">+98 765 432 10</p>
+        <p><span>✉</span> hello@luxi.com</p>
+      </div>
+      <p class="clinic-address">
+        <img src="android-pin.png" alt="" class="clinic-icon"> Vivamus street&nbsp; Block C - Vestibulum Building - 3rd Floor
+      </p>
+    </article>
+  </div>
+
+<div class="clinics-map">
+  <img
+    src="peta.png"
+    alt="Peta lokasi klinik"
+    class="clinics-map-image"
+  >
+ 
+<div class="map-navigation">
+  <a href="#home" class="map-nav-item" aria-label="Home">
+    <img src="rectangleks.png" alt="">
+  </a>
+
+  <a href="#about" class="map-nav-item" aria-label="About">
+    <img src="rectangleks.png" alt="">
+  </a>
+
+  <a href="#services" class="map-nav-item" aria-label="Services">
+    <img src="rectangle.png" alt="">
+  </a>
+
+  <a href="#doctors" class="map-nav-item" aria-label="Doctors">
+    <img src="rectangleks.png" alt="">
+  </a>
+
+  <a href="#contact" class="map-nav-item" aria-label="Contact">
+    <img src="rectangleks.png" alt="">
+  </a>
+</div>
+
+<a href="#home" class="back-to-top" aria-label="Kembali ke atas">
+  <img src="android-arrow-up.png" alt="">
+</a>
+
+</div>
+</section>
+
 
     <!-- footer -->
     <footer class="site-footer container" id="contact">
       <div>
-        <a class="brand" href="#home"
-          ><span class="brand-mark">M</span> Medical</a
-        >
+        
+<a class="brand" href="#home">
+  <img src="logo-medical.png" alt="" class="footer-logo">
+  Medical
+</a>
+
         <p class="muted">
-          Aliquam lobortis magna neque, gravida consequat velit venenatis at.
-        </p>
-        <small class="muted">© 2026 Medical. All rights reserved.</small>
+           Nam posuere accumsan porta. Integer id orci
+      sed ante tincidunt tincidunt sit amet sed libero.
+        <p></p><small class="muted">© Luxi Theme 2020</small></p>
       </div>
       <div>
-        <h3>Company</h3>
-        <a href="#about">About Us</a>
-        <a href="#doctors">Medical Profile</a>
-        <a href="#contact">Career</a>
+        <h3>COMPANY</h3>
+        <a href="#about">Donec dignissim</a>
+        <a href="#about">Curabitur egestas</a>
+        <a href="#about">Nam posuere</a>
+        <a href="#about">Anean facilisis</a>
       </div>
       <div>
-        <h3>Services</h3>
-        <a href="#facilities">Medical Services</a>
-        <a href="#doctors">Doctors</a>
-        <a href="#clinics">Clinic Location</a>
+        <h3>SERVICES</h3>
+        <a href="#facilities">Cras convallis</a>
+        <a href="#facilities">Vestibulum faucibus</a>
+        <a href="#facilities">Quisque lacinia purus</a>
+        <a href="#facilities">Aliquam nec ex</a>
       </div>
       <div>
-        <h3>Resources</h3>
-        <a href="#contact">Support Center</a>
-        <a href="#contact">Help Center</a>
-        <a href="#contact">Our Partners</a>
+        <h3>RESOURCES</h3>
+        <a href="#contact">Suspendise portitor</a>
+        <a href="#contact">Nam posuere</a>
+        <a href="#contact">Curabitur egestas</a>
       </div>
+      
+<!-- Social media dan pilihan bahasa -->
+<div class="footer-extra">
+  <div class="footer-socials">
+    <a href="#" aria-label="Facebook">
+      <img src="social-facebook.png" alt="">
+    </a>
+
+    <a href="#" aria-label="LinkedIn">
+      <img src="linkind.png" alt="">
+    </a>
+
+    <a href="#" aria-label="Twitter">
+      <img src="social-twitter.png" alt="">
+    </a>
+
+    <a href="#" aria-label="Instagram">
+      <img src="social-instagram.png" alt="">
+    </a>
+  </div>
+
+  <button class="footer-language" type="button">
+    <span class="language-globe">🌐</span>
+    <span>English - En</span>
+    <span class="language-arrow"></span>
+  </button>
+</div>
+
     </footer>
   </body>
 </html>
