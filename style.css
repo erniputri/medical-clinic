@@ -1,4 +1,4 @@
-/*1. RESET DAN PENGATURAN DASAR */
+﻿/*1. RESET DAN PENGATURAN DASAR */
 
 :root {
   --blue: #08a8e8;
@@ -1929,7 +1929,7 @@ main > section.container > .grid:not(.doctor-grid) .card p {
   content: none;
 }
 
-/* Gunakan aset rectangleks untuk outline dan rectangle.png untuk indikator aktif */
+/* Gunakan aset rectangleks untuk outline dan img/rectangle.png untuk indikator aktif */
 .clinics-map .map-nav-item img {
   display: block;
   width: 14px;
@@ -2258,18 +2258,18 @@ main > section.container > .grid:not(.doctor-grid) .card p {
 
 .hero-background .oval-main {
   z-index: 0;
-  left: 229px;
-  top: -198px;
+  left: 329px;
+  top: -150px;
   width: 934.5px;
   transform: rotate(0deg);
 }
 
 .hero-background .oval-side {
   z-index: 0;
-  left: 448px;
-  top: -318px;
+  left: 615px;
+  top: -220px;
   right: auto;
-  width: 639px;
+  width: 1000px;
   transform: rotate(0deg);
 }
 
