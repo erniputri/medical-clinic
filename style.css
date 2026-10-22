@@ -834,8 +834,9 @@ main > section.container > h2 {
   grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
   align-items: start;
   gap: 45px;
-  width: 100%;
-  padding: 60px 0 100px 7.5%;
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+  padding: 60px 0 100px;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -2616,10 +2617,10 @@ main > section.container > h2 {
 #doctors > .doctors-oval {
   position: absolute;
   z-index: -1;
-  top: 0;
-  left: 0;
-  width: 660px;
-  height: 770px;
+  top: -66px;
+  left: -181px;
+  width: 1000px;
+  height: 1000px;
   object-fit: contain;
   object-position: left top;
   pointer-events: none;
