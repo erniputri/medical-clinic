@@ -27,7 +27,7 @@ body {
   overflow-x: hidden;
   background: var(--white);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -193,12 +193,17 @@ p {
 
 .hero-content h1 {
   max-width: 340px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   color: #25292c;
   font-size: clamp(42px, 4.8vw, 68px);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -1.8px;
+}
+
+.hero-content h1,
+.hero-content h2 {
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .hero-content p {
@@ -361,7 +366,7 @@ p {
   align-items: center;
   gap: clamp(40px, 8vw, 110px);
   min-height: 430px;
-  padding-top: 55px;
+  padding-top: 70px;
   padding-bottom: 75px;
 }
 
@@ -394,8 +399,8 @@ p {
   position: absolute;
   z-index: -2;
   right: -55px;
-  bottom: -35px;
-  width: 190px;
+  bottom: -366px;
+  width: 340px;
   height: 120px;
   background-image: radial-gradient(#bde7f7 1.8px, transparent 1.8px);
   background-size: 14px 14px;
@@ -432,6 +437,7 @@ p {
 
 .about-content {
   min-width: 0;
+  transform: translateY(80px) translateX(-59px);
 }
 
 .about-content h2 {
@@ -526,7 +532,7 @@ p {
   grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.9fr);
   align-items: stretch;
   gap: 24px;
-  padding-top: 50px;
+  padding-top: 167px;
   padding-bottom: 60px;
   overflow: visible;
 }
@@ -537,20 +543,21 @@ p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  gap: 22px;
+  gap: 169px;
   min-width: 0;
 }
 
 @media (min-width: 1001px) {
   .facility-cards {
-    transform: translateX(60px);
+    transform: translateX(-52px) translateY(-32px);
   }
 }
 
 .facility-section .card {
   display: flex;
   min-width: 0;
-  height: 390px;
+  height: 395px;
+  width: 261px;
   min-height: 0;
   flex-direction: column;
   overflow: hidden;
@@ -563,21 +570,21 @@ p {
 .facility-section .card > img {
   display: block;
   width: 100%;
-  height: 155px;
+  height: 160px;
   flex-shrink: 0;
   border-radius: 12px 12px 30px 0;
   object-fit: cover;
 }
 
 .facility-section .card h3 {
-  margin: 14px 14px 7px;
-  font-size: 15px;
+  margin: 24px 14px 10px;
+  font-size: 22px;
 }
 
 .facility-section .card p {
   flex: 1;
-  margin: 0 14px 12px;
-  font-size: 12px;
+  margin: 1px 14px 30px;
+  font-size: 17px;
   line-height: 1.55;
 }
 
@@ -588,7 +595,7 @@ p {
   border-radius: 24px 0 10px 0;
   background: #45b456;
   color: #fff;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -616,7 +623,7 @@ p {
 .facility-panel::after {
   position: absolute;
   z-index: -2;
-  inset: 0% -12%;
+  inset: 0% 0%;
   border-radius: 93% 0 0 107%;
   background: linear-gradient(135deg, #b7e8f7 0%, #bfece9 55%, #d1f0df 100%);
   content: "";
@@ -2518,10 +2525,10 @@ main > section.container > h2 {
 
   .about-visual::after {
     right: auto;
-    left: 57px;
-    bottom: -300px;
-    width: 320px;
-    height: 285px;
+    left: 49px;
+    bottom: -447px;
+    width: 367px;
+    height: 380px;
     justify-content: center;
     background-image: radial-gradient(#dedede 3px, transparent 3px);
     background-size: 29px 29px;
