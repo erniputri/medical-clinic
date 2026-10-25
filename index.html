@@ -209,7 +209,7 @@
 
           <p>
             Curabitur egestas consequat lorem, vel fermentum augue porta id.
-            Aliquam consequat, nulla quis consequat venenatis at. Duis sed
+            <br/>Aliquam consequat, nulla quis consequat venenatis at. <br/>Duis sed
             augue.
           </p>
 
@@ -260,15 +260,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -289,15 +290,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -318,15 +320,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -347,15 +350,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -376,15 +380,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -405,15 +410,16 @@
                     aria-label="Jempol"
                     tabindex="-1"
                   >
-                    &#128077;&#65038;</button
+                    <img src="img/like.png" alt="" /></button
                   >95%</span
                 >
                 <span class="doctor-experience"
-                  ><span
+                  ><img
+                    src="img/calender.png"
+                    alt=""
                     class="doctor-meta-icon calendar-icon"
-                    aria-hidden="true"
-                  ></span
-                  >4 Years</span
+                  />
+                  4 Years</span
                 >
                 <a href="#contact" class="button">CHAT</a>
               </div>
@@ -521,14 +527,10 @@
           </div>
 
           <div class="testimonial-dots" aria-label="Slide testimonial">
-            <button
-              type="button"
-              aria-label="Slide 4"
-              aria-current="true"
-            ></button>
-            <button type="button" aria-label="Slide 3"></button>
-            <button type="button" aria-label="Slide 2"></button>
             <button type="button" aria-label="Slide 1"></button>
+            <button type="button" aria-label="Slide 2"></button>
+            <button type="button" aria-label="Slide 3"></button>
+            <button type="button" aria-label="Slide 4" aria-current="true"></button>
           </div>
         </div>
 
@@ -736,39 +738,26 @@
     </footer>
     <script>
       const testimonialTrack = document.querySelector(".testimonial-track");
-      const testimonialCards = [
-        ...testimonialTrack.querySelectorAll(".testimonial-card"),
-      ];
       const testimonialDots = [
         ...document.querySelectorAll(".testimonial-dots button"),
       ];
 
       function showTestimonial(index) {
-        const trackLeft = testimonialTrack.getBoundingClientRect().left;
-        const cardLeft = testimonialCards[index].getBoundingClientRect().left;
-
+        const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
         testimonialTrack.scrollTo({
-          left: testimonialTrack.scrollLeft + cardLeft - trackLeft,
+          left: (maxScroll * index) / (testimonialDots.length - 1),
           behavior: "smooth",
         });
       }
 
-      testimonialDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => showTestimonial(index));
-      });
-
-      testimonialTrack.addEventListener("scroll", () => {
-        const trackLeft = testimonialTrack.getBoundingClientRect().left;
-        const activeIndex = testimonialCards.reduce(
-          (closestIndex, card, index) => {
-            const closestCard = testimonialCards[closestIndex];
-            return Math.abs(card.getBoundingClientRect().left - trackLeft) <
-              Math.abs(closestCard.getBoundingClientRect().left - trackLeft)
-              ? index
-              : closestIndex;
-          },
-          0,
-        );
+      function updateTestimonialDot() {
+        const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
+        const activeIndex = maxScroll
+          ? Math.round(
+              (testimonialTrack.scrollLeft / maxScroll) *
+                (testimonialDots.length - 1),
+            )
+          : testimonialDots.length - 1;
 
         testimonialDots.forEach((dot, index) => {
           if (index === activeIndex) {
@@ -777,6 +766,17 @@
             dot.removeAttribute("aria-current");
           }
         });
+      }
+
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => showTestimonial(index));
+      });
+
+      testimonialTrack.addEventListener("scroll", updateTestimonialDot);
+      requestAnimationFrame(() => {
+        testimonialTrack.scrollLeft =
+          testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
+        updateTestimonialDot();
       });
     </script>
   </body>
